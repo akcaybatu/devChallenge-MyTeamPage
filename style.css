@@ -17,22 +17,17 @@ body{
     justify-content: space-evenly;
 }
 
-.who-are-we{
-    width: 540px;
-}
-
 #header h1{
-    width: 278px;
-    height: 47px;
-    left: 243px;
-    top: 110px;
-
     font-family: PT Serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
     line-height: 48px;
     letter-spacing: -0.045em;
+}
+
+.who-are-we{
+    width: 540px;
 }
 
 .who-are-we h2{
@@ -54,22 +49,17 @@ body{
 }
 
 #team-members{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 90%;
     margin: auto;
-}
-
-#member-card{
-    margin: 0 60px;
 }
 
 .member-name{   
     border: solid #F1F7E7 5px;
     border-radius: 15px;
-    background: #F1F7E7;
-     
+    background: #F1F7E7;     
     text-align: center;
     font-family: Poppins;
     font-style: normal;
@@ -79,10 +69,10 @@ body{
 }
 
 .member-picture{   
-    width: 240px;
-    height: 340px;
+    width: 205px;
+    height: 285px;
     border: solid #e8eddf 5px;
-    border-radius: 20rem;
+    border-radius: 100px;
 }
 
 .member-title{
@@ -102,6 +92,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 #footer p{
@@ -116,4 +107,70 @@ body{
 #footer a{
     color: #005f73;
     text-decoration: none;
+}
+
+@media screen and (max-width: 767px){
+    #team-members{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #member-card:nth-child(2n) {
+        margin-top: 100px;
+    }
+
+    .member-name{   
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .member-picture{   
+        width: 140px;
+        height: 200px;
+    }
+    
+    .member-title{
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .who-are-we h2{
+        font-size: 18px;
+    }
+
+    .who-are-we p{
+        font-size: 12px;
+    }
+
+    .member-name{   
+        font-size: 10px;
+        line-height: 18px;
+    }
+    
+    .member-picture{   
+        width: 120px;
+        height: 180px;
+    }
+    
+    .member-title{
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    #footer p{
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    #team-members{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #member-card:nth-child(3n - 1) {
+        margin-top: 100px;
+    }
 }
